@@ -1,0 +1,121 @@
+/* OPTION 2: CRYSTAL PRISM CSS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    /* Vibrant background required for glass effect to show */
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.calculator {
+    /* The Glass Effect */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px); /* The blur magic */
+    -webkit-backdrop-filter: blur(20px); /* Safari support */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.5); /* Highlight top edge */
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    max-width: 350px;
+    width: 100%;
+}
+
+.display {
+    background: rgba(0, 0, 0, 0.3); /* Semi-transparent dark */
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: right;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.previous-operand {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.2rem;
+    min-height: 24px;
+    word-wrap: break-word;
+}
+
+.current-operand {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+    word-wrap: break-word;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Subtle glow */
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.btn {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 20px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: white;
+    backdrop-filter: blur(5px);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* Button Colors - Using RGBA for transparency */
+.btn-number {
+    background: rgba(255, 255, 255, 0.05);
+}
+.btn-number:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.btn-operation, .btn-equals {
+    background: rgba(255, 149, 0, 0.6); /* Semi-transparent orange */
+}
+.btn-operation:hover, .btn-equals:hover {
+    background: rgba(255, 149, 0, 0.8);
+}
+
+.btn-clear {
+    background: rgba(255, 50, 50, 0.3); /* Semi-transparent red */
+    border-color: rgba(255, 50, 50, 0.5);
+}
+.btn-clear:hover {
+    background: rgba(255, 50, 50, 0.5);
+}
+
+.btn-zero {
+    grid-column: span 2;
+}
+
+@media (max-width: 400px) {
+    .calculator { padding: 15px; }
+    .btn { padding: 15px; font-size: 1.1rem; }
+    .current-operand { font-size: 2rem; }
+}
